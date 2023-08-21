@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: repro
+  name: repro
+spec:
+  containers:
+  - image: quay.io/mwasher/03591621-reproduction
+    name: repro
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  serviceAccountName: default
+  
